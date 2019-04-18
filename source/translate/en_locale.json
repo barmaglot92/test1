@@ -1,1 +1,34 @@
-{}
+{
+ "Header.balance": {
+  "id": "Header.balance",
+  "message": "Balance"
+ },
+ "Header.pay": {
+  "id": "Header.pay",
+  "message": "To payoff"
+ },
+ "MainPage.service": {
+  "id": "MainPage.service",
+  "message": "Services"
+ },
+ "MainPage.filter": {
+  "id": "MainPage.filter",
+  "message": "Filter"
+ },
+ "MainPage.clear": {
+  "id": "MainPage.clear",
+  "message": "Clear"
+ },
+ "MainPage.getBonus": {
+  "id": "MainPage.getBonus",
+  "message": "Get bonus"
+ },
+ "MainPage.promocode": {
+  "id": "MainPage.promocode",
+  "message": "Promocode"
+ },
+ "MainPage.noData": {
+  "id": "MainPage.noData",
+  "message": "No data found"
+ }
+}

@@ -2,6 +2,7 @@ const path = require("path")
 const fs = require("fs")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const WebpackPackLocales = require("./.webpack/helpers/packLocales")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 const isProd = process.env.NODE_ENV === "production"
 
@@ -84,5 +85,12 @@ module.exports = {
             "ru",
             path.resolve(rootDir, "source")
         ),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(rootDir, "source/client/data.json"),
+                to: path.resolve(rootDir, "dist", "web", "data.json"),
+                force: true,
+            },
+        ]),
     ],
 }

@@ -1,1 +1,34 @@
-{}
+{
+ "Header.balance": {
+  "id": "Header.balance",
+  "message": "Баланс"
+ },
+ "Header.pay": {
+  "id": "Header.pay",
+  "message": "К выплате"
+ },
+ "MainPage.service": {
+  "id": "MainPage.service",
+  "message": "Сервисы"
+ },
+ "MainPage.filter": {
+  "id": "MainPage.filter",
+  "message": "Фильтр"
+ },
+ "MainPage.clear": {
+  "id": "MainPage.clear",
+  "message": "Сбросить"
+ },
+ "MainPage.getBonus": {
+  "id": "MainPage.getBonus",
+  "message": "Получить бонус"
+ },
+ "MainPage.promocode": {
+  "id": "MainPage.promocode",
+  "message": "Промокод"
+ },
+ "MainPage.noData": {
+  "id": "MainPage.noData",
+  "message": "Нет данных"
+ }
+}

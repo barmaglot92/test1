@@ -3,6 +3,8 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import {createGlobalStyle} from "./utils/util"
 import {App} from "./App"
+import {ThemeProvider} from "styled-components"
+import {theme} from "./theme"
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -10,12 +12,18 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        font: 14px Roboto;
+        font: 14px "Roboto", sans-serif;
     }
-    html, body {
+    html, body, #root {
         margin: 0;
         padding: 0;
+        height: 100%;
     }
+
+    body {
+        position: relative;
+    }
+
     *, *:before, *:after {
         box-sizing: inherit;
     }
@@ -28,10 +36,12 @@ configure({
 export default class Kernel {
     public run() {
         ReactDOM.render(
-            <React.Fragment>
-                <GlobalStyle />
-                <App />
-            </React.Fragment>,
+            <ThemeProvider theme={theme}>
+                <React.Fragment>
+                    <GlobalStyle />
+                    <App />
+                </React.Fragment>
+            </ThemeProvider>,
             document.getElementById("root")
         )
     }
