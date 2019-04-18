@@ -42,8 +42,7 @@
         "uuid": "^3.3.2",
         "webpack": "^4.29.6",
         "webpack-cli": "^3.2.3",
-        "webpack-dev-server": "^3.2.1",
-        "whatwg-fetch": "^3.0.0"
+        "webpack-dev-server": "^3.2.1"
     },
     "scripts": {
         "start": "webpack-dev-server",
