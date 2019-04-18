@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "jsx": "react",
+    "suppressImplicitAnyIndexErrors": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true
+  },
+  "baseUrl": "./source",
+  "rootDir": ".",
+  "types": [
+    "node"
+  ],
+  "typeRoots": [
+    "node_modules/@types",
+    "types"
+  ],
+  "lib": [
+    "es2017",
+    "dom"
+  ],
+  "include": [
+    "source/**/*",
+  ],
+  "files": [
+    "./source/client/index.ts"
+  ]
+}
