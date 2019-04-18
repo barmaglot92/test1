@@ -79,7 +79,7 @@ module.exports = {
             template: "source/client/index.html",
         }),
         new WebpackPackLocales(
-            [path.resolve(rootDir, "source/client"), path.resolve(rootDir, "source/lib")],
+            [path.resolve(rootDir, "source/client")],
             ["en", "ru"],
             "ru",
             path.resolve(rootDir, "source")

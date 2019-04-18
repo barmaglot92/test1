@@ -1,5 +1,5 @@
-import {localStorage} from "client/utils/localStorage"
-import {APP_NAME} from "client/utils/appConfig"
+import {localStorage} from "../utils/localStorage"
+import {APP_NAME} from "../utils/config"
 
 interface IStorageStoreOptions {
     prefix: string

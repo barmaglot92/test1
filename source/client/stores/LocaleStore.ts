@@ -1,5 +1,5 @@
 import {autorun} from "mobx"
-import {inject} from "@mediascope/core-lib-next/utils/inject"
+import {inject} from "../utils/inject"
 import {Intl} from "./Intl"
 import {StorageStore} from "./StorageStore"
 
