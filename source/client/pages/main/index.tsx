@@ -11,6 +11,7 @@ import {inject} from "../../utils/inject"
 import {Divider} from "../../components/Divider"
 import {Intl} from "../../stores/Intl"
 import {observable, action, computed} from "mobx"
+import Scrollbars from "react-custom-scrollbars"
 
 interface MainPageProps {
     className?: string
@@ -71,7 +72,7 @@ export class MainPage extends React.Component<MainPageProps> {
                                     <ClearButton onClick={this.handleFilterClear}>{this.lang("clear")}</ClearButton>
                                 </FilterContainer>
                             </CFlex>
-                            <CardsWrapper col>
+                            <CardsWrapper>
                                 {this.bonuses.map(b => (
                                     <CardStyled key={b.id}>
                                         <CFlex grow={1} jc={CFlex.jc.between}>
@@ -109,6 +110,7 @@ export class MainPage extends React.Component<MainPageProps> {
 
 const NoDataMessage = styled(CFlex)`
     font-size: 24px;
+    height: 100%;
 `
 
 const DividerStyled = styled(Divider)`
@@ -137,8 +139,8 @@ const ButtonStyled = styled(Button)`
     margin-left: 24px;
 `
 
-const CardsWrapper = styled(CFlex)`
-    /* overflow: auto; */
+const CardsWrapper = styled(Scrollbars)`
+    flex-grow: 1;
 `
 const ClearButton = styled(Button)`
     align-self: flex-end;
@@ -165,6 +167,15 @@ const MainPageWrapper = styled.main`
     background-color: #f5f7fa;
     display: flex;
     flex-direction: column;
-    /* overflow: auto; */
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 `
-const PageContent = styled(CFlex)``
+const PageContent = styled(CFlex)`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+`

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es5",
     "jsx": "react",
     "suppressImplicitAnyIndexErrors": false,
     "sourceMap": true,
@@ -9,6 +9,7 @@
     "strictPropertyInitialization": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "module": "es6",
     "emitDecoratorMetadata": true
   },
   "baseUrl": "./source",

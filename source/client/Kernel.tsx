@@ -20,10 +20,6 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
 
-    body {
-        position: relative;
-    }
-
     *, *:before, *:after {
         box-sizing: inherit;
     }

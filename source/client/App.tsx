@@ -65,9 +65,11 @@ const PageWrapper = styled.div`
     display: grid;
     grid-template-columns: 80px auto;
     grid-template-rows: 80px auto 52px;
-    width: 100%;
     height: 100%;
-    position: relative;
+    width: 100%;
+
+    /* min width when interface looks good */
+    min-width: 1000px;
 
     ${SideBarStyled} {
         grid-column: 1;

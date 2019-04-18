@@ -6,24 +6,25 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 const isProd = process.env.NODE_ENV === "production"
 
-const presets = [
-    "@babel/preset-react",
-    [
-        "@babel/preset-env",
-        {
-            useBuiltIns: "usage",
-            targets: {
-                browsers: ["last 2 Chrome versions", "last 2 Edge versions"],
+const babelOptions = {
+    presets: [
+        [
+            "@babel/preset-env",
+            {
+                targets: {
+                    browsers: ["Chrome >= 52", "FireFox >= 44", "Safari >= 7", "Explorer 11", "last 4 Edge versions"],
+                },
+                useBuiltIns: "usage",
             },
-        },
+        ],
+        "@babel/preset-react",
     ],
-]
-
+}
 const rootDir = fs.realpathSync(process.cwd())
 
 module.exports = {
     devtool: isProd ? false : "source-map",
-    entry: ["./source/client/index.ts"],
+    entry: ["@babel/polyfill", "./source/client/index.ts"],
     output: {
         path: path.resolve(rootDir, "dist", "web"),
         publicPath: "/",
@@ -47,10 +48,7 @@ module.exports = {
                 use: [
                     {
                         loader: "babel-loader",
-                        options: {
-                            cacheDirectory: true,
-                            presets,
-                        },
+                        options: babelOptions,
                     },
                     {
                         loader: "ts-loader",
@@ -73,6 +71,8 @@ module.exports = {
         hot: true,
         contentBase: path.resolve(rootDir, "dist", "web"),
         port: 3002,
+        disableHostCheck: true,
+        host: "0.0.0.0",
     },
     plugins: [
         new HtmlWebpackPlugin({
